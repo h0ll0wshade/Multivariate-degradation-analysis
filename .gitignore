@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter and local editor state
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+
+# Local caches and scratch files
+.cph/
+*.prob
+*.tmp
+
+# Full text and PDFs of research publications are referenced, not redistributed
+*.pdf
+/btp.md

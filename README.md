@@ -1,22 +1,38 @@
 # Multivariate Degradation Signal Analysis
 
-Bachelor Thesis Project at IIT Guwahati under the guidance of **Prof. Ayon Ganguly**.
+Bachelor thesis project at IIT Guwahati under the guidance of Prof. Ayon Ganguly. This repository collects degradation modelling experiments, datasets, and their generated results in one place.
 
-## Overview
+## Start here
 
-This project focuses on the analysis of **multivariate degradation signals** for Remaining Useful Life (RUL) prognostics.
+The current runnable model is a **single-sensor degradation analysis** of C-MAPSS FD001 sensor 11. From this repository's root, run:
 
-Traditional degradation and prognostic models often work with a single degradation signal. In practical systems, however, multiple signals may jointly describe the degradation process and may exhibit dependencies with one another.
+```bash
+python models/univariate/explore_univariate.py
+```
 
-The objective of this project is to investigate approaches for extending established **univariate degradation models** to the multivariate setting while appropriately capturing dependencies between degradation signals.
+This opens separate interactive plots for the selected engine's signal fit and residuals, plus a model-comparison heatmap. Sliders change the engine, number of switch points, and polynomial degree. The heatmap compares BIC scores; it is not an RUL accuracy plot.
 
-## Current Work
+To save fitted parameters and CSV results:
 
-The project is currently in its initial research and experimentation phase.
+```bash
+python models/univariate/offline_univariate.py --sensor sensor_11 --switch-points 1 --degree 1
+```
 
-Current work includes:
+Install dependencies with `python -m pip install -r requirements.txt`. See [the univariate model guide](models/univariate/README.md) for model details and limitations.
 
-- Studying existing approaches for multivariate degradation analysis.
-- Exploring **copula-based methods** for modeling dependencies between degradation signals.
-- Investigating direct extensions of univariate degradation models to multiple signals.
-- Setting up datasets and preliminary models for experimentation.
+## Repository map
+
+| Section | Contents |
+| --- | --- |
+| `models/univariate/` | One-sensor offline degradation fit, interactive viewer, and guide |
+| `models/bivariate/` | Copula exploration notebook |
+| `models/multivariate/` | Multivariate degradation analysis notebook |
+| `models/baselines/` | Earlier PCA and Wiener-process RUL baseline |
+| `datasets/CMAPSS/` | NASA C-MAPSS train, test, RUL files, and dataset documentation |
+| `results/univariate/csv/` | Per-engine phase fits, fitted sensor curves, and BIC comparison |
+| `results/univariate/parameters/` | Fitted population parameters and selected model metadata |
+| `results/univariate/images/` | Example sensor fit figures |
+| `results/images/` | Other project figures |
+| `references/` | Citations and source links for research papers |
+
+The C-MAPSS text files are included so the experiments can run locally. Research article PDFs and extracted article text are not redistributed; citation details are in `references/`.
