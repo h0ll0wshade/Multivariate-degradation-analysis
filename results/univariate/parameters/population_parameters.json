@@ -1,0 +1,73 @@
+{
+  "dataset": "/Users/aadip/Desktop/Finale/BTP/btp_/datasets/CMAPSS/train_FD001.txt",
+  "sensor": "sensor_11",
+  "engines": 100,
+  "observations": 20631,
+  "time_basis": "(cycle / 100) ** polynomial_order",
+  "boundary_rule": "equal numbers of observed cycles across each completed engine lifetime",
+  "selected_model": {
+    "switch_points": 1,
+    "degree": 1,
+    "bic": -30808.756281389462
+  },
+  "lowest_bic_candidate": {
+    "switch_points": 0,
+    "degree": 3,
+    "bic": -33583.91683266717
+  },
+  "population_parameters": [
+    {
+      "phase": 1,
+      "engines": 100,
+      "coefficient_mean": [
+        47.33400817561115,
+        0.10906211921879028
+      ],
+      "coefficient_covariance_mle": [
+        [
+          0.022270320508710285,
+          -0.002516813425736486
+        ],
+        [
+          -0.002516813425736486,
+          0.0022594346514951953
+        ]
+      ],
+      "residual_variance_inverse_gamma": {
+        "shape": 43.89670829249657,
+        "scale": 0.4320161767915103
+      },
+      "duration_normal": {
+        "mean_cycles": 103.41,
+        "variance_cycles_squared_mle": 532.6819
+      }
+    },
+    {
+      "phase": 2,
+      "engines": 100,
+      "coefficient_mean": [
+        46.696010139530614,
+        0.6771865439584278
+      ],
+      "coefficient_covariance_mle": [
+        [
+          0.07258815654634415,
+          -0.02674751268134
+        ],
+        [
+          -0.02674751268134,
+          0.03252857046521251
+        ]
+      ],
+      "residual_variance_inverse_gamma": {
+        "shape": 33.12837225347903,
+        "scale": 0.41771000867890246
+      },
+      "duration_normal": {
+        "mean_cycles": 102.9,
+        "variance_cycles_squared_mle": 530.5300000000001
+      }
+    }
+  ],
+  "interpretation": "Phase locations use completed lifetimes. Duration estimates are descriptive and these retrospective fits cannot be used as earlier-time Cox covariates without removing future information."
+}
